@@ -14,6 +14,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func show(_ sender: UIButton) {
+        showAlerTowAction(title: "Demo title", message: "This is demo message  ") {
+            // access
+        }
+    }
+    
 }
 
