@@ -35,5 +35,14 @@ extension UIViewController {
         }
     }
 
+    func showAlertWithHandler(title:String , message: String , okTitle:String = "Ok" , okHandler: ((UIAlertAction)->Void)? = nil )  {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: okTitle, style: .cancel , handler: okHandler)
+        alert.addAction(ok)
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
     
 }
